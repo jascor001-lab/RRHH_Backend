@@ -79,4 +79,20 @@ export class UserEntity {
 })
 refresh_token!: string | null;
 
+  @Column({
+    name: 'rol',
+    type: 'varchar',
+    nullable: true,
+    default: 'user',
+  })
+  rol?: string;
+
+  @Column({
+    name: 'cuenta_activa',
+    type: 'boolean',
+    nullable: true,
+    default: true,
+  })
+  cuenta_activa?: boolean;
+
 }

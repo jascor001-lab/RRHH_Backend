@@ -1,4 +1,5 @@
 import {
+  IsBoolean,
   IsOptional,
   IsString,
 } from 'class-validator';
@@ -29,4 +30,12 @@ export class CreateUserDto {
   @IsOptional()
   @IsString()
   password?: string;
+
+  @IsOptional()
+  @IsString()
+  rol?: string;
+
+  @IsOptional()
+  @IsBoolean()
+  cuenta_activa?: boolean;
 }

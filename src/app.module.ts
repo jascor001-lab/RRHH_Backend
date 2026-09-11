@@ -4,13 +4,15 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { typeOrmConfig } from './config/typeorm.config';
 
-//import { GestUsersModule } from './domain/gestusers/gestusers.module';
+import { GestUsersModule } from './domain/gestusers/gestusers.module';
 import { AuthModule } from './domain/auth/auth.module';
+import { PayslipViewsModule } from './domain/payslip-views/payslip-views.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: ['.env.local', '.env'],
     }),
 
     TypeOrmModule.forRootAsync({
@@ -19,7 +21,8 @@ import { AuthModule } from './domain/auth/auth.module';
     }),
 
     AuthModule,
-    //GestUsersModule,
+    GestUsersModule,
+    PayslipViewsModule,
   ],
 })
 
