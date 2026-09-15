@@ -1,9 +1,10 @@
 @echo off
-title RRHH Backend (puerto 3007)
+title RRHH Backend (puerto 4008)
 echo.
 echo ========================================
 echo  RRHH Backend - inicio seguro Windows
 echo  Usa ruta sin caracter especial "&"
+echo  Puerto: 4008
 echo ========================================
 echo.
 
@@ -32,13 +33,13 @@ if errorlevel 1 (
   exit /b 1
 )
 
-for /f "tokens=5" %%a in ('netstat -ano ^| findstr :3007 ^| findstr LISTENING') do (
-  echo Liberando puerto 3007 (PID %%a)...
+for /f "tokens=5" %%a in ('netstat -ano ^| findstr :4008 ^| findstr LISTENING') do (
+  echo Liberando puerto 4008 (PID %%a)...
   taskkill /F /PID %%a >nul 2>&1
 )
 
 echo.
-echo Iniciando backend en modo desarrollo (puerto 3007)...
+echo Iniciando backend en modo desarrollo (puerto 4008)...
 echo Para detener: Ctrl+C
 echo.
 

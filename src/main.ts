@@ -23,10 +23,12 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       'http://localhost:3001',
-      'http://localhost:3004',
-      'http://127.0.0.1:3001',
-      'http://127.0.0.1:3004',
-      'http://192.168.7.223:3004',
+      'http://localhost:4009',
+      'http://127.0.0.1:4009',
+      'http://192.168.7.223:4009',
+      'https://localhost:4443',
+      'https://127.0.0.1:4443',
+      'https://192.168.7.223:4443',
     ],
     methods: [
       'GET',
@@ -39,7 +41,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-  const port = process.env.PORT || 3007;
+  const port = process.env.PORT || 4008;
 
   await app.listen(port);
 

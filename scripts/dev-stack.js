@@ -1,5 +1,5 @@
 /**
- * Arranca RRHH (PostgreSQL, puerto 3007) + MinIO (puerto 3010).
+ * Arranca RRHH (PostgreSQL, puerto 4008) + MinIO (puerto 3010).
  * Evita el error de Nest con "&" en rutas de Windows.
  */
 const { spawn } = require('child_process');
@@ -67,9 +67,9 @@ process.on('SIGTERM', shutdown);
 
 console.log('========================================');
 console.log(' RRHH Stack');
-console.log(' - Backend + PostgreSQL : puerto 3007');
+console.log(' - Backend + PostgreSQL : puerto 4008');
 console.log(' - MinIO (boletas)      : puerto 3010');
-console.log(' - Frontend             : puerto 3004');
+console.log(' - Frontend             : puerto 4009');
 console.log('========================================');
 
 if (!fs.existsSync(minioRoot)) {
